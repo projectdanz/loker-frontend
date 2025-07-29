@@ -48,9 +48,9 @@ const LoginForm = () => {
         try {
             const res = await axios.post("https://lokerprogrammer.vercel.app/api/api/v1/login", formData);
             const {token, user} = res.data;
-            localStorage.setItem("token:", token);
-            localStorage.setItem("user:", JSON.stringify(user));
-            navigate("/home")
+            localStorage.setItem("token", token);
+            localStorage.setItem("user", JSON.stringify(user));
+            navigate("/beranda")
         } catch (err) {
             console.log("error:", err.response.data.message);
         }
