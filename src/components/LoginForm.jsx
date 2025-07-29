@@ -21,7 +21,7 @@ const LoginForm = () => {
 
         if (!password) {
             response.push("Password harap diisi")
-        } else if (password.length < 8) {
+        } else if (password.length < 6) {
             response.push("Password minimal 8 karakter")
         }
 
