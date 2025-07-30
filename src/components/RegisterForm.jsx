@@ -6,7 +6,7 @@ const RegisterForm = () => {
   const navigate = useNavigate();
   let [message, setMessage] = useState({});
   const [formData, setFormData] = useState({
-   role: "applicant",
+   role: "employee",
     companyName: "",
     name: "",
     email: "",
@@ -73,7 +73,7 @@ const RegisterForm = () => {
     
     try {
         const data = formData
-      if (data.role === "applicant") {
+      if (data.role === "employee") {
           delete data.role;
           const res = await axios.post("https://lokerprogrammer.vercel.app/api/api/v1/register", formData);
           console.log("error:", err)
@@ -97,7 +97,7 @@ const RegisterForm = () => {
         
       <form onSubmit={handleSubmit}>
         <div>
-            <label><input type="radio" name="role" value="applicant" checked={formData.role === "applicant"} onChange={handleChange} />applicant</label>
+            <label><input type="radio" name="role" value="employee" checked={formData.role === "employee"} onChange={handleChange} />applicant</label>
             <label><input type="radio" name="role" value="company" checked={formData.role === "company"} onChange={handleChange} />company</label>
         </div>
         <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Fullname :"/>
